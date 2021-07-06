@@ -5,7 +5,9 @@ zookeeper:
   ## Configure Zookeeper resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   resources: ~
-
+  persistence:
+    storageClass: storage-class-simple
+    accessMode: ReadWriteMany
   ## The JVM heap size to allocate to Zookeeper
   env:
     ZK_HEAP_SIZE: 1G
