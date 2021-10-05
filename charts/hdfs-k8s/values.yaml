@@ -6,7 +6,7 @@ zookeeper:
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   resources: ~
   persistence:
-    storageClass: storage-class-simple
+    storageClass: managed-nfs-storage
     accessMode: ReadWriteMany
   ## The JVM heap size to allocate to Zookeeper
   env:
@@ -41,7 +41,7 @@ hdfs-journalnode-k8s:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: managed-nfs-storage
     ## To choose a suitable persistent volume from available static volumes, selectors
     ## are used.
     # selector:
@@ -80,7 +80,7 @@ hdfs-namenode-k8s:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: managed-nfs-storage
 
     ## To choose a suitable persistent volume from available static volumes, selectors
     ## are used.
